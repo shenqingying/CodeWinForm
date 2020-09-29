@@ -1,0 +1,839 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A48A957A-93D9-4E65-B051-A31D9A500368}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>STSY</RootNamespace>
+    <AssemblyName>STSY</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <IncludeIisSettings>false</IncludeIisSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI, Version=1.2.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>NPOI\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="CHUKGL\CKCX.aspx" />
+    <Content Include="CHUKGL\CKSH.aspx" />
+    <Content Include="CHUKGL\CKSHTH.aspx" />
+    <Content Include="CHUKGL\PLCK.aspx" />
+    <Content Include="CHUKGL\WLCK.aspx" />
+    <Content Include="CKGL\CKXX.aspx" />
+    <Content Include="CKGL\KHGYS.aspx" />
+    <Content Include="CKRBGL\CKRBB.aspx" />
+    <Content Include="CKRBGL\HYRBB.aspx" />
+    <Content Include="CKRBGL\RBDJ.aspx" />
+    <Content Include="CKRBGL\RKDBB.aspx" />
+    <Content Include="CKRBGL\RKRBB.aspx" />
+    <Content Include="Content\sonluk-ui\color.css" />
+    <Content Include="Content\sonluk-ui\common.css" />
+    <Content Include="Content\sonluk-ui\control.css" />
+    <Content Include="Content\sonluk-ui\grid-view.css" />
+    <Content Include="Content\sonluk-ui\images\arrow.gif" />
+    <Content Include="Content\sonluk-ui\images\blank.gif" />
+    <Content Include="Content\sonluk-ui\images\logo.png" />
+    <Content Include="Content\sonluk-ui\layout.css" />
+    <Content Include="Content\sonluk-ui\nav-bar.css" />
+    <Content Include="Content\UI-demo.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\css.css" />
+    <Content Include="css\example.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\foundation-datepicker.css" />
+    <Content Include="css\foundation-datepicker.min.css" />
+    <Content Include="css\foundation.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\templatemo_misc.css" />
+    <Content Include="css\templatemo_style.css" />
+    <Content Include="css\testimonails-slider.css" />
+    <Content Include="FKSY\SelectFKINFO.aspx" />
+    <Content Include="FKSY\SelectFKINFO2.aspx" />
+    <Content Include="FKSY\WebForm1.aspx" />
+    <Content Include="images\091dm.jpg" />
+    <Content Include="images\20145281011112891.jpg" />
+    <Content Include="images\20145281095357483.jpg" />
+    <Content Include="images\3.bmp" />
+    <Content Include="images\author-comment1.jpg" />
+    <Content Include="images\author-comment2.jpg" />
+    <Content Include="images\author-comment3.jpg" />
+    <Content Include="images\author-comment4.jpg" />
+    <Content Include="images\author1.jpg" />
+    <Content Include="images\author2.jpg" />
+    <Content Include="images\author3.jpg" />
+    <Content Include="images\author4.jpg" />
+    <Content Include="images\bg-image.jpg" />
+    <Content Include="images\blogpost1.jpg" />
+    <Content Include="images\blogpost2.jpg" />
+    <Content Include="images\blogpost3.jpg" />
+    <Content Include="images\blogpost4.jpg" />
+    <Content Include="images\blogpost5.jpg" />
+    <Content Include="images\blogpost6.jpg" />
+    <Content Include="images\close.gif" />
+    <Content Include="images\columns.gif" />
+    <Content Include="images\div-line.png" />
+    <Content Include="images\flickr-image1.jpg" />
+    <Content Include="images\flickr-image2.jpg" />
+    <Content Include="images\flickr-image3.jpg" />
+    <Content Include="images\flickr-image4.jpg" />
+    <Content Include="images\line1.gif" />
+    <Content Include="images\login_03.gif" />
+    <Content Include="images\login_04.gif" />
+    <Content Include="images\login_06.gif" />
+    <Content Include="images\login_07.gif" />
+    <Content Include="images\login_08.gif" />
+    <Content Include="images\login_09.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo_meitu_1.jpg" />
+    <Content Include="images\main_01.gif" />
+    <Content Include="images\main_04.gif" />
+    <Content Include="images\main_06.gif" />
+    <Content Include="images\main_07.gif" />
+    <Content Include="images\main_08.gif" />
+    <Content Include="images\main_09.gif" />
+    <Content Include="images\main_11.gif" />
+    <Content Include="images\main_14.gif" />
+    <Content Include="images\main_16.gif" />
+    <Content Include="images\main_18.gif" />
+    <Content Include="images\main_21.gif" />
+    <Content Include="images\main_23.gif" />
+    <Content Include="images\main_38.gif" />
+    <Content Include="images\main_40.gif" />
+    <Content Include="images\main_42.gif" />
+    <Content Include="images\main_47.gif" />
+    <Content Include="images\main_49.gif" />
+    <Content Include="images\menu_bg.jpg" />
+    <Content Include="images\mnkla41.jpg" />
+    <Content Include="images\noImage.jpg" />
+    <Content Include="images\open-icon.png" />
+    <Content Include="images\print.png" />
+    <Content Include="images\product1.jpg" />
+    <Content Include="images\product1_big.jpg" />
+    <Content Include="images\product2.jpg" />
+    <Content Include="images\product2_big.jpg" />
+    <Content Include="images\product3.jpg" />
+    <Content Include="images\product3_big.jpg" />
+    <Content Include="images\product4.jpg" />
+    <Content Include="images\product4_big.jpg" />
+    <Content Include="images\product5.jpg" />
+    <Content Include="images\product5_big.jpg" />
+    <Content Include="images\product6.jpg" />
+    <Content Include="images\product6_big.jpg" />
+    <Content Include="images\product7.jpg" />
+    <Content Include="images\product7_big.jpg" />
+    <Content Include="images\product8.jpg" />
+    <Content Include="images\product8_big.jpg" />
+    <Content Include="images\recent-post1.jpg" />
+    <Content Include="images\recent-post2.jpg" />
+    <Content Include="images\recent-post3.jpg" />
+    <Content Include="images\search-icon.png" />
+    <Content Include="images\single-post.jpg" />
+    <Content Include="images\slide1.jpg" />
+    <Content Include="images\slide2.jpg" />
+    <Content Include="images\slide3.jpg" />
+    <Content Include="images\subscribe-icon.png" />
+    <Content Include="images\timeline1.jpg" />
+    <Content Include="images\timeline2.jpg" />
+    <Content Include="images\timeline3.jpg" />
+    <Content Include="images\timeline4.jpg" />
+    <Content Include="images\timeline5.jpg" />
+    <Content Include="images\timeline6.jpg" />
+    <Content Include="images\title.jpg" />
+    <Content Include="images\under-heading.png" />
+    <Content Include="Index\ChangePSW.aspx" />
+    <Content Include="Index\RSTJ.aspx" />
+    <Content Include="Index\Index.aspx" />
+    <Content Include="JDGL\JDCX.aspx" />
+    <Content Include="JDGL\JDDJ.aspx" />
+    <Content Include="JDGL\JDRQ.aspx" />
+    <Content Include="JDGL\JDRYGL.aspx" />
+    <Content Include="JDGL\JDSZ.aspx" />
+    <Content Include="JDGL\ZDBM.aspx" />
+    <Content Include="JS\AJAX.js" />
+    <Content Include="JS\Calendar.js" />
+    <Content Include="JS\Control.js" />
+    <Content Include="JS\foundation-datepicker.js" />
+    <Content Include="JS\foundation-datepicker.min.js" />
+    <Content Include="JS\foundation.min.js" />
+    <Content Include="JS\jquery-1.11.3.min.js" />
+    <Content Include="JS\JScript.js" />
+    <Content Include="JS\locales\foundation-datepicker.ar.js" />
+    <Content Include="JS\locales\foundation-datepicker.az.js" />
+    <Content Include="JS\locales\foundation-datepicker.bg.js" />
+    <Content Include="JS\locales\foundation-datepicker.bs.js" />
+    <Content Include="JS\locales\foundation-datepicker.ca.js" />
+    <Content Include="JS\locales\foundation-datepicker.cs.js" />
+    <Content Include="JS\locales\foundation-datepicker.cy.js" />
+    <Content Include="JS\locales\foundation-datepicker.da.js" />
+    <Content Include="JS\locales\foundation-datepicker.de.js" />
+    <Content Include="JS\locales\foundation-datepicker.el.js" />
+    <Content Include="JS\locales\foundation-datepicker.en-GB.js" />
+    <Content Include="JS\locales\foundation-datepicker.eo.js" />
+    <Content Include="JS\locales\foundation-datepicker.es.js" />
+    <Content Include="JS\locales\foundation-datepicker.et.js" />
+    <Content Include="JS\locales\foundation-datepicker.eu.js" />
+    <Content Include="JS\locales\foundation-datepicker.fa.js" />
+    <Content Include="JS\locales\foundation-datepicker.fi.js" />
+    <Content Include="JS\locales\foundation-datepicker.fo.js" />
+    <Content Include="JS\locales\foundation-datepicker.fr-CH.js" />
+    <Content Include="JS\locales\foundation-datepicker.fr.js" />
+    <Content Include="JS\locales\foundation-datepicker.gl.js" />
+    <Content Include="JS\locales\foundation-datepicker.he.js" />
+    <Content Include="JS\locales\foundation-datepicker.hr.js" />
+    <Content Include="JS\locales\foundation-datepicker.hu.js" />
+    <Content Include="JS\locales\foundation-datepicker.hy.js" />
+    <Content Include="JS\locales\foundation-datepicker.id.js" />
+    <Content Include="JS\locales\foundation-datepicker.is.js" />
+    <Content Include="JS\locales\foundation-datepicker.it-CH.js" />
+    <Content Include="JS\locales\foundation-datepicker.it.js" />
+    <Content Include="JS\locales\foundation-datepicker.ja.js" />
+    <Content Include="JS\locales\foundation-datepicker.ka.js" />
+    <Content Include="JS\locales\foundation-datepicker.kh.js" />
+    <Content Include="JS\locales\foundation-datepicker.kk.js" />
+    <Content Include="JS\locales\foundation-datepicker.ko.js" />
+    <Content Include="JS\locales\foundation-datepicker.kr.js" />
+    <Content Include="JS\locales\foundation-datepicker.lt.js" />
+    <Content Include="JS\locales\foundation-datepicker.lv.js" />
+    <Content Include="JS\locales\foundation-datepicker.me.js" />
+    <Content Include="JS\locales\foundation-datepicker.mk.js" />
+    <Content Include="JS\locales\foundation-datepicker.mn.js" />
+    <Content Include="JS\locales\foundation-datepicker.ms.js" />
+    <Content Include="JS\locales\foundation-datepicker.nb.js" />
+    <Content Include="JS\locales\foundation-datepicker.nl-BE.js" />
+    <Content Include="JS\locales\foundation-datepicker.nl.js" />
+    <Content Include="JS\locales\foundation-datepicker.no.js" />
+    <Content Include="JS\locales\foundation-datepicker.pl.js" />
+    <Content Include="JS\locales\foundation-datepicker.pt-br.js" />
+    <Content Include="JS\locales\foundation-datepicker.pt.js" />
+    <Content Include="JS\locales\foundation-datepicker.ro.js" />
+    <Content Include="JS\locales\foundation-datepicker.rs-latin.js" />
+    <Content Include="JS\locales\foundation-datepicker.rs.js" />
+    <Content Include="JS\locales\foundation-datepicker.ru.js" />
+    <Content Include="JS\locales\foundation-datepicker.sk.js" />
+    <Content Include="JS\locales\foundation-datepicker.sl.js" />
+    <Content Include="JS\locales\foundation-datepicker.sq.js" />
+    <Content Include="JS\locales\foundation-datepicker.sr-latin.js" />
+    <Content Include="JS\locales\foundation-datepicker.sr.js" />
+    <Content Include="JS\locales\foundation-datepicker.sv.js" />
+    <Content Include="JS\locales\foundation-datepicker.sw.js" />
+    <Content Include="JS\locales\foundation-datepicker.th.js" />
+    <Content Include="JS\locales\foundation-datepicker.tr.js" />
+    <Content Include="JS\locales\foundation-datepicker.uk.js" />
+    <Content Include="JS\locales\foundation-datepicker.vi.js" />
+    <Content Include="JS\locales\foundation-datepicker.zh-CN.js" />
+    <Content Include="JS\locales\foundation-datepicker.zh-TW.js" />
+    <Content Include="login.aspx" />
+    <Content Include="MyWebService.asmx" />
+    <Content Include="NPOI\NPOI.dll" />
+    <Content Include="RKGL\HJCX.aspx" />
+    <Content Include="RKGL\JGCX.aspx" />
+    <Content Include="RKGL\RKCX.aspx" />
+    <Content Include="RKGL\RKDJ.aspx" />
+    <Content Include="RKGL\RKlist.aspx" />
+    <Content Include="RKGL\RKSH.aspx" />
+    <Content Include="RKGL\RKSHTH.aspx" />
+    <Content Include="RKGL\RKTJ.aspx" />
+    <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\DatePicker.js" />
+    <Content Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\lang\en.js" />
+    <Content Include="Scripts\lang\zh-cn.js" />
+    <Content Include="Scripts\lang\zh-tw.js" />
+    <Content Include="Scripts\skin\datePicker.gif" />
+    <Content Include="Scripts\skin\default\datepicker.css" />
+    <Content Include="Scripts\skin\default\img.gif" />
+    <Content Include="Scripts\skin\WdatePicker.css" />
+    <Content Include="Scripts\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\sonluk-ui\layout.js" />
+    <Content Include="Scripts\sonluk-ui\nav-bar.js" />
+    <Content Include="Scripts\WdatePicker.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="TEXT.aspx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\KQInfoService\KQINFO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\KQInfoService\KQinfo.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WL\KCYJ.aspx" />
+    <Content Include="WL\WLKC.aspx" />
+    <Content Include="WL\WLXX.aspx" />
+    <Content Include="YFGL\FKHDQR.aspx" />
+    <Content Include="YFGL\FKQR.aspx" />
+    <Content Include="YFGL\FPRKTJBB.aspx" />
+    <Content Include="YFGL\FPRR.aspx" />
+    <Content Include="YFGL\FPSH.aspx" />
+    <Content Include="YFGL\FPYZGLDH.aspx" />
+    <Content Include="YFGL\YFCX.aspx" />
+    <None Include="Web References\KQInfoService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CHUKGL\CKCX.aspx.cs">
+      <DependentUpon>CKCX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CHUKGL\CKCX.aspx.designer.cs">
+      <DependentUpon>CKCX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CHUKGL\CKSH.aspx.cs">
+      <DependentUpon>CKSH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CHUKGL\CKSH.aspx.designer.cs">
+      <DependentUpon>CKSH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CHUKGL\CKSHTH.aspx.cs">
+      <DependentUpon>CKSHTH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CHUKGL\CKSHTH.aspx.designer.cs">
+      <DependentUpon>CKSHTH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CHUKGL\PLCK.aspx.cs">
+      <DependentUpon>PLCK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CHUKGL\PLCK.aspx.designer.cs">
+      <DependentUpon>PLCK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CHUKGL\WLCK.aspx.cs">
+      <DependentUpon>WLCK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CHUKGL\WLCK.aspx.designer.cs">
+      <DependentUpon>WLCK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CKGL\CKXX.aspx.cs">
+      <DependentUpon>CKXX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CKGL\CKXX.aspx.designer.cs">
+      <DependentUpon>CKXX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CKGL\KHGYS.aspx.cs">
+      <DependentUpon>KHGYS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CKGL\KHGYS.aspx.designer.cs">
+      <DependentUpon>KHGYS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CKRBGL\CKRBB.aspx.cs">
+      <DependentUpon>CKRBB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CKRBGL\CKRBB.aspx.designer.cs">
+      <DependentUpon>CKRBB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CKRBGL\HYRBB.aspx.cs">
+      <DependentUpon>HYRBB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CKRBGL\HYRBB.aspx.designer.cs">
+      <DependentUpon>HYRBB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CKRBGL\RBDJ.aspx.cs">
+      <DependentUpon>RBDJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CKRBGL\RBDJ.aspx.designer.cs">
+      <DependentUpon>RBDJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CKRBGL\RKDBB.aspx.cs">
+      <DependentUpon>RKDBB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CKRBGL\RKDBB.aspx.designer.cs">
+      <DependentUpon>RKDBB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CKRBGL\RKRBB.aspx.cs">
+      <DependentUpon>RKRBB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CKRBGL\RKRBB.aspx.designer.cs">
+      <DependentUpon>RKRBB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FKSY\SelectFKINFO.aspx.cs">
+      <DependentUpon>SelectFKINFO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FKSY\SelectFKINFO.aspx.designer.cs">
+      <DependentUpon>SelectFKINFO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FKSY\SelectFKINFO2.aspx.cs">
+      <DependentUpon>SelectFKINFO2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FKSY\SelectFKINFO2.aspx.designer.cs">
+      <DependentUpon>SelectFKINFO2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FKSY\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FKSY\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index\ChangePSW.aspx.cs">
+      <DependentUpon>ChangePSW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\ChangePSW.aspx.designer.cs">
+      <DependentUpon>ChangePSW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index\RSTJ.aspx.cs">
+      <DependentUpon>RSTJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\RSTJ.aspx.designer.cs">
+      <DependentUpon>RSTJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JDGL\JDCX.aspx.cs">
+      <DependentUpon>JDCX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDGL\JDCX.aspx.designer.cs">
+      <DependentUpon>JDCX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JDGL\JDDJ.aspx.cs">
+      <DependentUpon>JDDJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDGL\JDDJ.aspx.designer.cs">
+      <DependentUpon>JDDJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JDGL\JDRQ.aspx.cs">
+      <DependentUpon>JDRQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDGL\JDRQ.aspx.designer.cs">
+      <DependentUpon>JDRQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JDGL\JDRYGL.aspx.cs">
+      <DependentUpon>JDRYGL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDGL\JDRYGL.aspx.designer.cs">
+      <DependentUpon>JDRYGL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JDGL\JDSZ.aspx.cs">
+      <DependentUpon>JDSZ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDGL\JDSZ.aspx.designer.cs">
+      <DependentUpon>JDSZ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JDGL\ZDBM.aspx.cs">
+      <DependentUpon>ZDBM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JDGL\ZDBM.aspx.designer.cs">
+      <DependentUpon>ZDBM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Modles\CRMModels.cs" />
+    <Compile Include="Modles\PUBLICModels.cs" />
+    <Compile Include="Modles\SSOModels.cs" />
+    <Compile Include="MyWebService.asmx.cs">
+      <DependentUpon>MyWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RKGL\HJCX.aspx.cs">
+      <DependentUpon>HJCX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RKGL\HJCX.aspx.designer.cs">
+      <DependentUpon>HJCX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RKGL\JGCX.aspx.cs">
+      <DependentUpon>JGCX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RKGL\JGCX.aspx.designer.cs">
+      <DependentUpon>JGCX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RKGL\RKCX.aspx.cs">
+      <DependentUpon>RKCX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RKGL\RKCX.aspx.designer.cs">
+      <DependentUpon>RKCX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RKGL\RKDJ.aspx.cs">
+      <DependentUpon>RKDJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RKGL\RKDJ.aspx.designer.cs">
+      <DependentUpon>RKDJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RKGL\RKlist.aspx.cs">
+      <DependentUpon>RKlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RKGL\RKlist.aspx.designer.cs">
+      <DependentUpon>RKlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RKGL\RKSH.aspx.cs">
+      <DependentUpon>RKSH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RKGL\RKSH.aspx.designer.cs">
+      <DependentUpon>RKSH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RKGL\RKSHTH.aspx.cs">
+      <DependentUpon>RKSHTH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RKGL\RKSHTH.aspx.designer.cs">
+      <DependentUpon>RKSHTH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RKGL\RKTJ.aspx.cs">
+      <DependentUpon>RKTJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RKGL\RKTJ.aspx.designer.cs">
+      <DependentUpon>RKTJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sonluk.Master.cs">
+      <DependentUpon>sonluk.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sonluk.Master.designer.cs">
+      <DependentUpon>sonluk.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TEXT.aspx.cs">
+      <DependentUpon>TEXT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TEXT.aspx.designer.cs">
+      <DependentUpon>TEXT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\KQInfoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WL\KCYJ.aspx.cs">
+      <DependentUpon>KCYJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WL\KCYJ.aspx.designer.cs">
+      <DependentUpon>KCYJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WL\WLKC.aspx.cs">
+      <DependentUpon>WLKC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WL\WLKC.aspx.designer.cs">
+      <DependentUpon>WLKC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WL\WLXX.aspx.cs">
+      <DependentUpon>WLXX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WL\WLXX.aspx.designer.cs">
+      <DependentUpon>WLXX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YFGL\FKHDQR.aspx.cs">
+      <DependentUpon>FKHDQR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YFGL\FKHDQR.aspx.designer.cs">
+      <DependentUpon>FKHDQR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YFGL\FKQR.aspx.cs">
+      <DependentUpon>FKQR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YFGL\FKQR.aspx.designer.cs">
+      <DependentUpon>FKQR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YFGL\FPRKTJBB.aspx.cs">
+      <DependentUpon>FPRKTJBB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YFGL\FPRKTJBB.aspx.designer.cs">
+      <DependentUpon>FPRKTJBB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YFGL\FPRR.aspx.cs">
+      <DependentUpon>FPRR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YFGL\FPRR.aspx.designer.cs">
+      <DependentUpon>FPRR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YFGL\FPSH.aspx.cs">
+      <DependentUpon>FPSH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YFGL\FPSH.aspx.designer.cs">
+      <DependentUpon>FPSH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YFGL\FPYZGLDH.aspx.cs">
+      <DependentUpon>FPYZGLDH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YFGL\FPYZGLDH.aspx.designer.cs">
+      <DependentUpon>FPYZGLDH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YFGL\YFCX.aspx.cs">
+      <DependentUpon>YFCX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YFGL\YFCX.aspx.designer.cs">
+      <DependentUpon>YFCX.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sonluk.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Main.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bussiness\Bussiness.csproj">
+      <Project>{B650C5AF-E1C6-4DA2-9953-2BDDC124C255}</Project>
+      <Name>Bussiness</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\配置文件1.pubxml" />
+    <None Include="Web References\KQInfoService\KQinfo.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.8.207/API/KQ/KQinfo.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\KQInfoService\</RelPath>
+      <UpdateFromURL>http://192.168.8.207/API/KQ/KQinfo.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>STSY_KQInfoService_KQinfo</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1181</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

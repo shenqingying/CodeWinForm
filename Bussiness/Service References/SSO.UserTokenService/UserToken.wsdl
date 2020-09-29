@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Token">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TokenResult" type="tns:TokenInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TokenInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="access_token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expires_in" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MESSAGE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TOKENID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Menu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MenuResult" type="tns:MenuInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MenuInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Node" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Uri" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Children" type="tns:ArrayOfMenuInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMenuInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MenuInfo" nillable="true" type="tns:MenuInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AcceptToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AcceptTokenResult" type="tns:AccountInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SN" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SignIn" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Menu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telphone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExternalSignIn" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Group" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurGroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageDetails" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SAPAuthorization" type="tns:AuthorizationInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Route" type="tns:RouteInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Authorization" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AuthorizationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PurchasingGroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReleaseGroup" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReleaseCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RouteInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Controller" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Auth" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateTokenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokenInfo" nillable="true" type="tns:TokenInfo" />
+      <s:element name="MenuInfo" nillable="true" type="tns:MenuInfo" />
+      <s:element name="AccountInfo" nillable="true" type="tns:AccountInfo" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TokenSoapIn">
+    <wsdl:part name="parameters" element="tns:Token" />
+  </wsdl:message>
+  <wsdl:message name="TokenSoapOut">
+    <wsdl:part name="parameters" element="tns:TokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="MenuSoapIn">
+    <wsdl:part name="parameters" element="tns:Menu" />
+  </wsdl:message>
+  <wsdl:message name="MenuSoapOut">
+    <wsdl:part name="parameters" element="tns:MenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:AcceptToken" />
+  </wsdl:message>
+  <wsdl:message name="AcceptTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:AcceptTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateToken" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="TokenHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:TokenInfo" />
+  </wsdl:message>
+  <wsdl:message name="MenuHttpGetIn">
+    <wsdl:part name="ptoken" type="s:string" />
+    <wsdl:part name="parent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MenuHttpGetOut">
+    <wsdl:part name="Body" element="tns:MenuInfo" />
+  </wsdl:message>
+  <wsdl:message name="AcceptTokenHttpGetIn">
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AcceptTokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:AccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenHttpGetIn">
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="TokenHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:TokenInfo" />
+  </wsdl:message>
+  <wsdl:message name="MenuHttpPostIn">
+    <wsdl:part name="ptoken" type="s:string" />
+    <wsdl:part name="parent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MenuHttpPostOut">
+    <wsdl:part name="Body" element="tns:MenuInfo" />
+  </wsdl:message>
+  <wsdl:message name="AcceptTokenHttpPostIn">
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AcceptTokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:AccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenHttpPostIn">
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="UserTokenSoap">
+    <wsdl:operation name="Token">
+      <wsdl:input message="tns:TokenSoapIn" />
+      <wsdl:output message="tns:TokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <wsdl:input message="tns:MenuSoapIn" />
+      <wsdl:output message="tns:MenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptToken">
+      <wsdl:input message="tns:AcceptTokenSoapIn" />
+      <wsdl:output message="tns:AcceptTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <wsdl:input message="tns:ValidateTokenSoapIn" />
+      <wsdl:output message="tns:ValidateTokenSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UserTokenHttpGet">
+    <wsdl:operation name="Token">
+      <wsdl:input message="tns:TokenHttpGetIn" />
+      <wsdl:output message="tns:TokenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <wsdl:input message="tns:MenuHttpGetIn" />
+      <wsdl:output message="tns:MenuHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptToken">
+      <wsdl:input message="tns:AcceptTokenHttpGetIn" />
+      <wsdl:output message="tns:AcceptTokenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <wsdl:input message="tns:ValidateTokenHttpGetIn" />
+      <wsdl:output message="tns:ValidateTokenHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UserTokenHttpPost">
+    <wsdl:operation name="Token">
+      <wsdl:input message="tns:TokenHttpPostIn" />
+      <wsdl:output message="tns:TokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <wsdl:input message="tns:MenuHttpPostIn" />
+      <wsdl:output message="tns:MenuHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptToken">
+      <wsdl:input message="tns:AcceptTokenHttpPostIn" />
+      <wsdl:output message="tns:AcceptTokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <wsdl:input message="tns:ValidateTokenHttpPostIn" />
+      <wsdl:output message="tns:ValidateTokenHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserTokenSoap" type="tns:UserTokenSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Token">
+      <soap:operation soapAction="http://tempuri.org/Token" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <soap:operation soapAction="http://tempuri.org/Menu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptToken">
+      <soap:operation soapAction="http://tempuri.org/AcceptToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <soap:operation soapAction="http://tempuri.org/ValidateToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserTokenSoap12" type="tns:UserTokenSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Token">
+      <soap12:operation soapAction="http://tempuri.org/Token" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <soap12:operation soapAction="http://tempuri.org/Menu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptToken">
+      <soap12:operation soapAction="http://tempuri.org/AcceptToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <soap12:operation soapAction="http://tempuri.org/ValidateToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserTokenHttpGet" type="tns:UserTokenHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Token">
+      <http:operation location="/Token" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <http:operation location="/Menu" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptToken">
+      <http:operation location="/AcceptToken" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <http:operation location="/ValidateToken" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserTokenHttpPost" type="tns:UserTokenHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Token">
+      <http:operation location="/Token" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Menu">
+      <http:operation location="/Menu" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptToken">
+      <http:operation location="/AcceptToken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <http:operation location="/ValidateToken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserToken">
+    <wsdl:port name="UserTokenSoap" binding="tns:UserTokenSoap">
+      <soap:address location="http://192.168.0.223/API/SSO/UserToken.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserTokenSoap12" binding="tns:UserTokenSoap12">
+      <soap12:address location="http://192.168.0.223/API/SSO/UserToken.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserTokenHttpGet" binding="tns:UserTokenHttpGet">
+      <http:address location="http://192.168.0.223/API/SSO/UserToken.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserTokenHttpPost" binding="tns:UserTokenHttpPost">
+      <http:address location="http://192.168.0.223/API/SSO/UserToken.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,11 @@
+﻿.display-panel {
+    width:600px;
+    margin:auto;
+}
+.control-title {
+    margin-top:20px;
+    margin-bottom:10px;
+    text-align:left;
+    border-bottom:1px solid #3498db;
+}
+

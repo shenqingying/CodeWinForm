@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ff4cef9c-8f19-4928-bca7-850440dbd0e2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.0.223/API/SSO/WS_SSO_TOKEN_TOKENIDINFO.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WS_SSO_TOKEN_TOKENIDINFO.disco" MetadataType="Disco" ID="52b91472-33ef-440c-a6f3-15d9f07f372c" SourceId="1" SourceUrl="http://192.168.0.223/API/SSO/WS_SSO_TOKEN_TOKENIDINFO.asmx?disco" />
+    <MetadataFile FileName="WS_SSO_TOKEN_TOKENIDINFO.wsdl" MetadataType="Wsdl" ID="8eeadae7-91c4-4849-91ba-cb5a6d8d57c5" SourceId="1" SourceUrl="http://192.168.0.223/API/SSO/WS_SSO_TOKEN_TOKENIDINFO.asmx?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SELECT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TOKENID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SELECTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SELECTResult" type="tns:MES_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MES_RETURN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TYPE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MESSAGE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BH" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="XH" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TMSX" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UPDATE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TOKENID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LB" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UPDATEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UPDATEResult" type="tns:MES_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="USERNAMEDY_INSERT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:SSO_TOKEN_USERNAMEDY" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSO_TOKEN_USERNAMEDY">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ZHID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZHLB" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZHUSERNAME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UPDATELB" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ZHUSERID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="USERNAMEDY_INSERTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAMEDY_INSERTResult" type="tns:MES_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="USERNAMEDY_UPDATE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:SSO_TOKEN_USERNAMEDY" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="USERNAMEDY_UPDATEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAMEDY_UPDATEResult" type="tns:MES_RETURN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="USERNAMEDY_SELECT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:SSO_TOKEN_USERNAMEDY" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="USERNAMEDY_SELECTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAMEDY_SELECTResult" type="tns:SSO_TOKEN_USERNAMEDY_SELECT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSO_TOKEN_USERNAMEDY_SELECT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MES_RETURN" type="tns:MES_RETURN" />
+          <s:element minOccurs="0" maxOccurs="1" name="SSO_TOKEN_USERNAMEDY" type="tns:ArrayOfSSO_TOKEN_USERNAMEDY" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSSO_TOKEN_USERNAMEDY">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SSO_TOKEN_USERNAMEDY" nillable="true" type="tns:SSO_TOKEN_USERNAMEDY" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MES_RETURN" nillable="true" type="tns:MES_RETURN" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SELECTSoapIn">
+    <wsdl:part name="parameters" element="tns:SELECT" />
+  </wsdl:message>
+  <wsdl:message name="SELECTSoapOut">
+    <wsdl:part name="parameters" element="tns:SELECTResponse" />
+  </wsdl:message>
+  <wsdl:message name="UPDATESoapIn">
+    <wsdl:part name="parameters" element="tns:UPDATE" />
+  </wsdl:message>
+  <wsdl:message name="UPDATESoapOut">
+    <wsdl:part name="parameters" element="tns:UPDATEResponse" />
+  </wsdl:message>
+  <wsdl:message name="USERNAMEDY_INSERTSoapIn">
+    <wsdl:part name="parameters" element="tns:USERNAMEDY_INSERT" />
+  </wsdl:message>
+  <wsdl:message name="USERNAMEDY_INSERTSoapOut">
+    <wsdl:part name="parameters" element="tns:USERNAMEDY_INSERTResponse" />
+  </wsdl:message>
+  <wsdl:message name="USERNAMEDY_UPDATESoapIn">
+    <wsdl:part name="parameters" element="tns:USERNAMEDY_UPDATE" />
+  </wsdl:message>
+  <wsdl:message name="USERNAMEDY_UPDATESoapOut">
+    <wsdl:part name="parameters" element="tns:USERNAMEDY_UPDATEResponse" />
+  </wsdl:message>
+  <wsdl:message name="USERNAMEDY_SELECTSoapIn">
+    <wsdl:part name="parameters" element="tns:USERNAMEDY_SELECT" />
+  </wsdl:message>
+  <wsdl:message name="USERNAMEDY_SELECTSoapOut">
+    <wsdl:part name="parameters" element="tns:USERNAMEDY_SELECTResponse" />
+  </wsdl:message>
+  <wsdl:message name="SELECTHttpGetIn">
+    <wsdl:part name="TOKENID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SELECTHttpGetOut">
+    <wsdl:part name="Body" element="tns:MES_RETURN" />
+  </wsdl:message>
+  <wsdl:message name="UPDATEHttpGetIn">
+    <wsdl:part name="TOKENID" type="s:string" />
+    <wsdl:part name="LB" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UPDATEHttpGetOut">
+    <wsdl:part name="Body" element="tns:MES_RETURN" />
+  </wsdl:message>
+  <wsdl:message name="SELECTHttpPostIn">
+    <wsdl:part name="TOKENID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SELECTHttpPostOut">
+    <wsdl:part name="Body" element="tns:MES_RETURN" />
+  </wsdl:message>
+  <wsdl:message name="UPDATEHttpPostIn">
+    <wsdl:part name="TOKENID" type="s:string" />
+    <wsdl:part name="LB" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UPDATEHttpPostOut">
+    <wsdl:part name="Body" element="tns:MES_RETURN" />
+  </wsdl:message>
+  <wsdl:portType name="WS_SSO_TOKEN_TOKENIDINFOSoap">
+    <wsdl:operation name="SELECT">
+      <wsdl:input message="tns:SELECTSoapIn" />
+      <wsdl:output message="tns:SELECTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE">
+      <wsdl:input message="tns:UPDATESoapIn" />
+      <wsdl:output message="tns:UPDATESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="USERNAMEDY_INSERT">
+      <wsdl:input message="tns:USERNAMEDY_INSERTSoapIn" />
+      <wsdl:output message="tns:USERNAMEDY_INSERTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="USERNAMEDY_UPDATE">
+      <wsdl:input message="tns:USERNAMEDY_UPDATESoapIn" />
+      <wsdl:output message="tns:USERNAMEDY_UPDATESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="USERNAMEDY_SELECT">
+      <wsdl:input message="tns:USERNAMEDY_SELECTSoapIn" />
+      <wsdl:output message="tns:USERNAMEDY_SELECTSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WS_SSO_TOKEN_TOKENIDINFOHttpGet">
+    <wsdl:operation name="SELECT">
+      <wsdl:input message="tns:SELECTHttpGetIn" />
+      <wsdl:output message="tns:SELECTHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE">
+      <wsdl:input message="tns:UPDATEHttpGetIn" />
+      <wsdl:output message="tns:UPDATEHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WS_SSO_TOKEN_TOKENIDINFOHttpPost">
+    <wsdl:operation name="SELECT">
+      <wsdl:input message="tns:SELECTHttpPostIn" />
+      <wsdl:output message="tns:SELECTHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE">
+      <wsdl:input message="tns:UPDATEHttpPostIn" />
+      <wsdl:output message="tns:UPDATEHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_SSO_TOKEN_TOKENIDINFOSoap" type="tns:WS_SSO_TOKEN_TOKENIDINFOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SELECT">
+      <soap:operation soapAction="http://tempuri.org/SELECT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE">
+      <soap:operation soapAction="http://tempuri.org/UPDATE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="USERNAMEDY_INSERT">
+      <soap:operation soapAction="http://tempuri.org/USERNAMEDY_INSERT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="USERNAMEDY_UPDATE">
+      <soap:operation soapAction="http://tempuri.org/USERNAMEDY_UPDATE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="USERNAMEDY_SELECT">
+      <soap:operation soapAction="http://tempuri.org/USERNAMEDY_SELECT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_SSO_TOKEN_TOKENIDINFOSoap12" type="tns:WS_SSO_TOKEN_TOKENIDINFOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SELECT">
+      <soap12:operation soapAction="http://tempuri.org/SELECT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE">
+      <soap12:operation soapAction="http://tempuri.org/UPDATE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="USERNAMEDY_INSERT">
+      <soap12:operation soapAction="http://tempuri.org/USERNAMEDY_INSERT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="USERNAMEDY_UPDATE">
+      <soap12:operation soapAction="http://tempuri.org/USERNAMEDY_UPDATE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="USERNAMEDY_SELECT">
+      <soap12:operation soapAction="http://tempuri.org/USERNAMEDY_SELECT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_SSO_TOKEN_TOKENIDINFOHttpGet" type="tns:WS_SSO_TOKEN_TOKENIDINFOHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SELECT">
+      <http:operation location="/SELECT" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE">
+      <http:operation location="/UPDATE" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_SSO_TOKEN_TOKENIDINFOHttpPost" type="tns:WS_SSO_TOKEN_TOKENIDINFOHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SELECT">
+      <http:operation location="/SELECT" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATE">
+      <http:operation location="/UPDATE" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_SSO_TOKEN_TOKENIDINFO">
+    <wsdl:port name="WS_SSO_TOKEN_TOKENIDINFOSoap" binding="tns:WS_SSO_TOKEN_TOKENIDINFOSoap">
+      <soap:address location="http://192.168.0.223/API/SSO/WS_SSO_TOKEN_TOKENIDINFO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_SSO_TOKEN_TOKENIDINFOSoap12" binding="tns:WS_SSO_TOKEN_TOKENIDINFOSoap12">
+      <soap12:address location="http://192.168.0.223/API/SSO/WS_SSO_TOKEN_TOKENIDINFO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_SSO_TOKEN_TOKENIDINFOHttpGet" binding="tns:WS_SSO_TOKEN_TOKENIDINFOHttpGet">
+      <http:address location="http://192.168.0.223/API/SSO/WS_SSO_TOKEN_TOKENIDINFO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_SSO_TOKEN_TOKENIDINFOHttpPost" binding="tns:WS_SSO_TOKEN_TOKENIDINFOHttpPost">
+      <http:address location="http://192.168.0.223/API/SSO/WS_SSO_TOKEN_TOKENIDINFO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,181 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Web.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link href="../css/css.css" rel="stylesheet" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script>
+    //初始化
+    var def = "1";
+    function mover(object) {
+        //主菜单
+        var mm = document.getElementById("m_" + object);
+        mm.className = "m_li_a";
+        //初始主菜单先隐藏效果
+        if (def != 0) {
+            var mdef = document.getElementById("m_" + def);
+            mdef.className = "m_li";
+        }
+        //子菜单
+        var ss = document.getElementById("s_" + object);
+        ss.style.display = "block";
+        //初始子菜单先隐藏效果
+        if (def != 0) {
+            var sdef = document.getElementById("s_" + def);
+            sdef.style.display = "none";
+        }
+    }
+
+    function mout(object) {
+        //主菜单
+        var mm = document.getElementById("m_" + object);
+        mm.className = "m_li";
+        //初始主菜单还原效果
+        if (def != 0) {
+            var mdef = document.getElementById("m_" + def);
+            mdef.className = "m_li_a";
+        }
+        //子菜单
+        var ss = document.getElementById("s_" + object);
+        ss.style.display = "none";
+        //初始子菜单还原效果
+        if (def != 0) {
+            var sdef = document.getElementById("s_" + def);
+            sdef.style.display = "block";
+        }
+    }
+</script>
+        <meta charset="utf-8">
+        <title>双鹿电池运维管理平台</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="../css/flexslider.css" rel="stylesheet" type="text/css" />
+        <link href="../css/font-awesome.css" rel="stylesheet" type="text/css" />
+        <link href="../css/templatemo_misc.css" rel="stylesheet" type="text/css" />
+        <link href="../css/templatemo_style.css" rel="stylesheet" type="text/css" />
+        <link href="../css/testimonails-slider.css" rel="stylesheet"
+            type="text/css" />
+        <script src="../script/vendor/modernizr-2.6.1-respond-1.1.0.min.js"
+            type="text/javascript"></script>
+        
+        <style type="text/css">
+            .style1
+            {
+                font-size: large;
+                font-family: 仿宋;
+            }
+        </style>
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="#/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        
+                <div id="top-header">
+                    <div class="container">
+                        <div class="row">
+                        </div>
+                    </div>
+                </div>
+                <div id="main-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="logo">
+                                    <a href="#"><img src="../images/logo_meitu_1.jpg" title="Grill Template" alt="Grill Website Template" ></a>
+                                    <strong><span class="style1">双鹿电池运维管理平台</span></strong></div>
+                            </div>
+                              </div>
+                                   </div>
+                        </div>
+ <div id="menu">
+  <ul>
+    <li class="m_line"><img src="../images/line1.gif" /></li>
+    <li id="m_1" class='m_li_a'><a href="Index.aspx">主页</a></li>
+    <li class="m_line"><img src="../images/line1.gif" /></li>
+    <li id="m_2" class='m_li' onmouseover='mover(2);' onmouseout='mout(2);'><a href="#">设备信息管理</a></li>
+    <li class="m_line"><img src="../images/line1.gif" /></li>
+    <li id="m_3" class='m_li' onmouseover='mover(3);' onmouseout='mout(3);'><a href="#">设备维修管理</a></li>
+    <li class="m_line"><img src="../images/line1.gif" /></li>
+    <li id="m_4" class='m_li' onmouseover='mover(4);' onmouseout='mout(4);'><a href="#">配件管理</a></li>
+    <li class="m_line"><img src="../images/line1.gif" /></li>
+    <li id="m_5" class='m_li' onmouseover='mover(5);' onmouseout='mout(5);'><a href="#">软件变更</a></li>
+    <li class="m_line"><img src="../images/line1.gif" /></li>
+    <li id="m_6" class='m_li' onmouseover='mover(6);' onmouseout='mout(6);'><a href="#">软件信息管理</a></li>
+    <li class="m_line"><img src="../images/line1.gif" /></li>
+     <li id="m_7" class='m_li' onmouseover='mover(7);' onmouseout='mout(7);'><a href="#">基础表管理</a></li>
+    <li class="m_line"><img src="../images/line1.gif" /></li>
+ 
+  
+  </ul>
+</div>
+
+<div style="height:32px; background-color:#F1F1F1;">
+  <ul class="smenu">
+  
+    <li style="padding-left:31px;" id="s_2" class='s_li' onmouseover='mover(2);' onmouseout='mout(2);'><a href="../DeviceInfoManage/DeviceInput.aspx">硬件设备录入</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../DeviceInfoManage/InfoSearch.aspx">信息查询修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../DeviceInfoManage/Search.aspx">信息查询</a></li>
+    <li style="padding-left:142px;" id="s_3" class='s_li' onmouseover='mover(3);' onmouseout='mout(3);'><a href="../DeviceRepairManage/RepairEntering.aspx">维修录入</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../DeviceRepairManage/RepairDetail.aspx">历史查询修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">查询</a></li>
+    <li style="padding-left:232px;" id="s_4" class='s_li' onmouseover='mover(4);' onmouseout='mout(4);'><a href="../PartsManage/PartsIOManage.aspx">出入库记录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../PartsManage/PartsChangeManage.aspx">出入库记录管理</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../PartsManage/StockManage.aspx">库存查询</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">查询</a></li>
+    <li style="padding-left:364px;" id="s_5" class='s_li' onmouseover='mover(5);' onmouseout='mout(5);'><a href="../SoftwareChangeManage/SoftwareChange.aspx">软件变更申请</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../SoftwareChangeManage/SoftwareChangeManage.aspx">历史查询修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">特殊查询</a></li>
+    <li style="padding-left:457px;" id="s_6" class='s_li' onmouseover='mover(6);' onmouseout='mout(6);'><a href="../SSManage/SSConfigManage.aspx">配置项管理</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../SSManage/SoftwareManage.aspx">软件系统模块管理</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">特殊查询</a></li>
+     <li style="padding-left:422px;" id="s_7" class='s_li' onmouseover='mover(7);' onmouseout='mout(7);'><a href="../BaseTableManage/DeptManage.aspx">部门组织结构管理</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../BaseTableManage/PartsTypeManage.aspx">配件类型管理</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../BaseTableManage/SoftwareInfoManage.aspx">设备安装软件管理</a></li>
+  
+  </ul>
+</div>
+
+                          
+                       
+         
+           
+            
+
+            <div id="slider">
+                <div class="flexslider">
+                </div>
+            </div>
+  
+
+
+
+
+
+        
+                            <div align="center" style="height: 39px; margin-top: 48px">
+                      
+                                <img src="../images/under-heading.png" alt="" >
+                            </div>
+                   
+  
+        <asp:ContentPlaceHolder ID="body" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+
+      
+        
+
+            
+			<footer>
+                        <p align="center">Copyright@2015 <a href="http://www.sonluk.com/chn/index.asp">中银（宁波)电池有限公司</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Made by &nbsp;&nbsp;叹离殇</p>
+                 
+                    
+                           
+            </footer>
+       </form>
+    <script src="../script/vendor/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../script/vendor/jquery.gmap3.min.js" type="text/javascript"></script>
+    <script src="../script/main.js" type="text/javascript"></script>
+    <script src="../script/plugins.js" type="text/javascript"></script>
+    <script src="../JS/Calendar.js" type="text/javascript"></script>
+</body>
+</html>

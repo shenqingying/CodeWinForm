@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:CRM_HG_STAFF" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CRM_HG_STAFF">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DEPID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFUSER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFPW" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFLX" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFRZSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFMPSJ" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFSEX" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFJG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFSFZH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFSR" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFZZMM" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFXL" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFBYYX" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFHYZK" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFCZDZ" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFZWJB" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFGW" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFWORK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFMOBILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFTEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFEMAIL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GJ" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFSF" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFCITY" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BBID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFMEMO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JLRQ" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ISACTIVE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BZID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SISLOCK" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SCANCEL" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ISSUPER" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="XH" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="E_COUNT" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFKHLXID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="USERLX" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:CRM_HG_STAFF" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Report">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:CRM_Report_STAFFModel" />
+            <s:element minOccurs="0" maxOccurs="1" name="TYPE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CRM_Report_STAFFModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ISACTIVE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFLX" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFUSER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FROMSTAFFMPSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TOSTAFFMPSJ" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFSEX" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFZZMM" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFXL" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFZWJB" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFGW" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DEPID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllSYS" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReportResult" type="tns:ArrayOfCRM_HG_STAFFList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRM_HG_STAFFList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRM_HG_STAFFList" nillable="true" type="tns:CRM_HG_STAFFList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRM_HG_STAFFList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFLXDES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPIDDES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFZZMMDES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFSEXDES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFXLDES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFHYZKDES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFZWJBDES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFGWDES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BZIDDES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BBIDDES" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DEPID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFUSER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFPW" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFLX" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFRZSJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFMPSJ" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFSEX" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFJG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFSFZH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFSR" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFZZMM" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFXL" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFBYYX" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFHYZK" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFCZDZ" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFZWJB" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFGW" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFWORK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFMOBILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFTEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFEMAIL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GJ" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFSF" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFCITY" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BBID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFMEMO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JLRQ" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ISACTIVE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BZID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SISLOCK" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SCANCEL" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ISSUPER" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="XH" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="E_COUNT" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFKHLXID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="USERLXDES" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReadBySTAFFID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadBySTAFFIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadBySTAFFIDResult" type="tns:CRM_HG_STAFF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadBySTAFFNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="STAFFNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadBySTAFFNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadBySTAFFNOResult" type="tns:CRM_HG_STAFF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadByROLEID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ROLEID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadByROLEIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadByROLEIDResult" type="tns:CRM_HG_STAFF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadByDUTYID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DUTYID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadByDUTYIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadByDUTYIDResult" type="tns:ArrayOfCRM_HG_STAFF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCRM_HG_STAFF">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRM_HG_STAFF" nillable="true" type="tns:CRM_HG_STAFF" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReadByParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:CRM_HG_STAFF" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadByParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadByParamResult" type="tns:ArrayOfCRM_HG_STAFFList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadUserResult" type="tns:ArrayOfCRM_HG_STAFFList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSTAFFBYKHIDANDDUTY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KHID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DUTYID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSTAFFBYKHIDANDDUTYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSTAFFBYKHIDANDDUTYResult" type="tns:ArrayOfSTAFFDUTY_KH" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSTAFFDUTY_KH">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="STAFFDUTY_KH" nillable="true" type="tns:STAFFDUTY_KH" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="STAFFDUTY_KH">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="STAFFNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DUTYNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GNAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReadSTAFF_KHGOURPBYSTAFFID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSTAFF_KHGOURPBYSTAFFIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSTAFF_KHGOURPBYSTAFFIDResult" type="tns:ArrayOfCRM_HG_STAFF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSTAFF_KHGroupByStaffidAndDuty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DUTYID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadSTAFF_KHGroupByStaffidAndDutyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadSTAFF_KHGroupByStaffidAndDutyResult" type="tns:ArrayOfCRM_HG_STAFF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadStaff_BYDEPID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadStaff_BYDEPIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadStaff_BYDEPIDResult" type="tns:ArrayOfCRM_HG_STAFF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadUser_STAFF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:CRM_Report_STAFFModel" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadUser_STAFFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadUser_STAFFResult" type="tns:ArrayOfCRM_HG_STAFFList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="int" type="s:int" />
+      <s:element name="CRM_HG_STAFF" nillable="true" type="tns:CRM_HG_STAFF" />
+      <s:element name="ArrayOfCRM_HG_STAFF" nillable="true" type="tns:ArrayOfCRM_HG_STAFF" />
+      <s:element name="ArrayOfCRM_HG_STAFFList" nillable="true" type="tns:ArrayOfCRM_HG_STAFFList" />
+      <s:element name="ArrayOfSTAFFDUTY_KH" nillable="true" type="tns:ArrayOfSTAFFDUTY_KH" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Create" />
+  </wsdl:message>
+  <wsdl:message name="CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReportSoapIn">
+    <wsdl:part name="parameters" element="tns:Report" />
+  </wsdl:message>
+  <wsdl:message name="ReportSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadBySTAFFID" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadBySTAFFIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFNOSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadBySTAFFNO" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFNOSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadBySTAFFNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadByROLEIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadByROLEID" />
+  </wsdl:message>
+  <wsdl:message name="ReadByROLEIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadByROLEIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadByDUTYIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadByDUTYID" />
+  </wsdl:message>
+  <wsdl:message name="ReadByDUTYIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadByDUTYIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadByParamSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadByParam" />
+  </wsdl:message>
+  <wsdl:message name="ReadByParamSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadByParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadUser" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFFBYKHIDANDDUTYSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSTAFFBYKHIDANDDUTY" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFFBYKHIDANDDUTYSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSTAFFBYKHIDANDDUTYResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGOURPBYSTAFFIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSTAFF_KHGOURPBYSTAFFID" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGOURPBYSTAFFIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSTAFF_KHGOURPBYSTAFFIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGroupByStaffidAndDutySoapIn">
+    <wsdl:part name="parameters" element="tns:ReadSTAFF_KHGroupByStaffidAndDuty" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGroupByStaffidAndDutySoapOut">
+    <wsdl:part name="parameters" element="tns:ReadSTAFF_KHGroupByStaffidAndDutyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadStaff_BYDEPIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadStaff_BYDEPID" />
+  </wsdl:message>
+  <wsdl:message name="ReadStaff_BYDEPIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadStaff_BYDEPIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadUser_STAFFSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadUser_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadUser_STAFFSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadUser_STAFFResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFIDHttpGetIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:CRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFNOHttpGetIn">
+    <wsdl:part name="STAFFNO" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFNOHttpGetOut">
+    <wsdl:part name="Body" element="tns:CRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadByROLEIDHttpGetIn">
+    <wsdl:part name="ROLEID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadByROLEIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:CRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadByDUTYIDHttpGetIn">
+    <wsdl:part name="DUTYID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadByDUTYIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserHttpGetIn">
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFFList" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFFBYKHIDANDDUTYHttpGetIn">
+    <wsdl:part name="KHID" type="s:string" />
+    <wsdl:part name="DUTYID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFFBYKHIDANDDUTYHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSTAFFDUTY_KH" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGOURPBYSTAFFIDHttpGetIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGOURPBYSTAFFIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGroupByStaffidAndDutyHttpGetIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="DUTYID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGroupByStaffidAndDutyHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadStaff_BYDEPIDHttpGetIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadStaff_BYDEPIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFIDHttpPostIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:CRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFNOHttpPostIn">
+    <wsdl:part name="STAFFNO" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadBySTAFFNOHttpPostOut">
+    <wsdl:part name="Body" element="tns:CRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadByROLEIDHttpPostIn">
+    <wsdl:part name="ROLEID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadByROLEIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:CRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadByDUTYIDHttpPostIn">
+    <wsdl:part name="DUTYID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadByDUTYIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserHttpPostIn">
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFFList" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFFBYKHIDANDDUTYHttpPostIn">
+    <wsdl:part name="KHID" type="s:string" />
+    <wsdl:part name="DUTYID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFFBYKHIDANDDUTYHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSTAFFDUTY_KH" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGOURPBYSTAFFIDHttpPostIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGOURPBYSTAFFIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGroupByStaffidAndDutyHttpPostIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="DUTYID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadSTAFF_KHGroupByStaffidAndDutyHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:message name="ReadStaff_BYDEPIDHttpPostIn">
+    <wsdl:part name="STAFFID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReadStaff_BYDEPIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCRM_HG_STAFF" />
+  </wsdl:message>
+  <wsdl:portType name="HG_STAFFSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Create">
+      <wsdl:input message="tns:CreateSoapIn" />
+      <wsdl:output message="tns:CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input message="tns:UpdateSoapIn" />
+      <wsdl:output message="tns:UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteSoapIn" />
+      <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Report">
+      <wsdl:input message="tns:ReportSoapIn" />
+      <wsdl:output message="tns:ReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFID">
+      <wsdl:input message="tns:ReadBySTAFFIDSoapIn" />
+      <wsdl:output message="tns:ReadBySTAFFIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFNO">
+      <wsdl:input message="tns:ReadBySTAFFNOSoapIn" />
+      <wsdl:output message="tns:ReadBySTAFFNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadByROLEID">
+      <wsdl:input message="tns:ReadByROLEIDSoapIn" />
+      <wsdl:output message="tns:ReadByROLEIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadByDUTYID">
+      <wsdl:input message="tns:ReadByDUTYIDSoapIn" />
+      <wsdl:output message="tns:ReadByDUTYIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadByParam">
+      <wsdl:input message="tns:ReadByParamSoapIn" />
+      <wsdl:output message="tns:ReadByParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser">
+      <wsdl:input message="tns:ReadUserSoapIn" />
+      <wsdl:output message="tns:ReadUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFFBYKHIDANDDUTY">
+      <wsdl:input message="tns:ReadSTAFFBYKHIDANDDUTYSoapIn" />
+      <wsdl:output message="tns:ReadSTAFFBYKHIDANDDUTYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGOURPBYSTAFFID">
+      <wsdl:input message="tns:ReadSTAFF_KHGOURPBYSTAFFIDSoapIn" />
+      <wsdl:output message="tns:ReadSTAFF_KHGOURPBYSTAFFIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGroupByStaffidAndDuty">
+      <wsdl:input message="tns:ReadSTAFF_KHGroupByStaffidAndDutySoapIn" />
+      <wsdl:output message="tns:ReadSTAFF_KHGroupByStaffidAndDutySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStaff_BYDEPID">
+      <wsdl:input message="tns:ReadStaff_BYDEPIDSoapIn" />
+      <wsdl:output message="tns:ReadStaff_BYDEPIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser_STAFF">
+      <wsdl:input message="tns:ReadUser_STAFFSoapIn" />
+      <wsdl:output message="tns:ReadUser_STAFFSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="HG_STAFFHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteHttpGetIn" />
+      <wsdl:output message="tns:DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFID">
+      <wsdl:input message="tns:ReadBySTAFFIDHttpGetIn" />
+      <wsdl:output message="tns:ReadBySTAFFIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFNO">
+      <wsdl:input message="tns:ReadBySTAFFNOHttpGetIn" />
+      <wsdl:output message="tns:ReadBySTAFFNOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadByROLEID">
+      <wsdl:input message="tns:ReadByROLEIDHttpGetIn" />
+      <wsdl:output message="tns:ReadByROLEIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadByDUTYID">
+      <wsdl:input message="tns:ReadByDUTYIDHttpGetIn" />
+      <wsdl:output message="tns:ReadByDUTYIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser">
+      <wsdl:input message="tns:ReadUserHttpGetIn" />
+      <wsdl:output message="tns:ReadUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFFBYKHIDANDDUTY">
+      <wsdl:input message="tns:ReadSTAFFBYKHIDANDDUTYHttpGetIn" />
+      <wsdl:output message="tns:ReadSTAFFBYKHIDANDDUTYHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGOURPBYSTAFFID">
+      <wsdl:input message="tns:ReadSTAFF_KHGOURPBYSTAFFIDHttpGetIn" />
+      <wsdl:output message="tns:ReadSTAFF_KHGOURPBYSTAFFIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGroupByStaffidAndDuty">
+      <wsdl:input message="tns:ReadSTAFF_KHGroupByStaffidAndDutyHttpGetIn" />
+      <wsdl:output message="tns:ReadSTAFF_KHGroupByStaffidAndDutyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStaff_BYDEPID">
+      <wsdl:input message="tns:ReadStaff_BYDEPIDHttpGetIn" />
+      <wsdl:output message="tns:ReadStaff_BYDEPIDHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="HG_STAFFHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input message="tns:DeleteHttpPostIn" />
+      <wsdl:output message="tns:DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFID">
+      <wsdl:input message="tns:ReadBySTAFFIDHttpPostIn" />
+      <wsdl:output message="tns:ReadBySTAFFIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFNO">
+      <wsdl:input message="tns:ReadBySTAFFNOHttpPostIn" />
+      <wsdl:output message="tns:ReadBySTAFFNOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadByROLEID">
+      <wsdl:input message="tns:ReadByROLEIDHttpPostIn" />
+      <wsdl:output message="tns:ReadByROLEIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadByDUTYID">
+      <wsdl:input message="tns:ReadByDUTYIDHttpPostIn" />
+      <wsdl:output message="tns:ReadByDUTYIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser">
+      <wsdl:input message="tns:ReadUserHttpPostIn" />
+      <wsdl:output message="tns:ReadUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFFBYKHIDANDDUTY">
+      <wsdl:input message="tns:ReadSTAFFBYKHIDANDDUTYHttpPostIn" />
+      <wsdl:output message="tns:ReadSTAFFBYKHIDANDDUTYHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGOURPBYSTAFFID">
+      <wsdl:input message="tns:ReadSTAFF_KHGOURPBYSTAFFIDHttpPostIn" />
+      <wsdl:output message="tns:ReadSTAFF_KHGOURPBYSTAFFIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGroupByStaffidAndDuty">
+      <wsdl:input message="tns:ReadSTAFF_KHGroupByStaffidAndDutyHttpPostIn" />
+      <wsdl:output message="tns:ReadSTAFF_KHGroupByStaffidAndDutyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadStaff_BYDEPID">
+      <wsdl:input message="tns:ReadStaff_BYDEPIDHttpPostIn" />
+      <wsdl:output message="tns:ReadStaff_BYDEPIDHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HG_STAFFSoap" type="tns:HG_STAFFSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://tempuri.org/Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Report">
+      <soap:operation soapAction="http://tempuri.org/Report" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFID">
+      <soap:operation soapAction="http://tempuri.org/ReadBySTAFFID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFNO">
+      <soap:operation soapAction="http://tempuri.org/ReadBySTAFFNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByROLEID">
+      <soap:operation soapAction="http://tempuri.org/ReadByROLEID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByDUTYID">
+      <soap:operation soapAction="http://tempuri.org/ReadByDUTYID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByParam">
+      <soap:operation soapAction="http://tempuri.org/ReadByParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser">
+      <soap:operation soapAction="http://tempuri.org/ReadUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFFBYKHIDANDDUTY">
+      <soap:operation soapAction="http://tempuri.org/ReadSTAFFBYKHIDANDDUTY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGOURPBYSTAFFID">
+      <soap:operation soapAction="http://tempuri.org/ReadSTAFF_KHGOURPBYSTAFFID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGroupByStaffidAndDuty">
+      <soap:operation soapAction="http://tempuri.org/ReadSTAFF_KHGroupByStaffidAndDuty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadStaff_BYDEPID">
+      <soap:operation soapAction="http://tempuri.org/ReadStaff_BYDEPID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser_STAFF">
+      <soap:operation soapAction="http://tempuri.org/ReadUser_STAFF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HG_STAFFSoap12" type="tns:HG_STAFFSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create">
+      <soap12:operation soapAction="http://tempuri.org/Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap12:operation soapAction="http://tempuri.org/Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Report">
+      <soap12:operation soapAction="http://tempuri.org/Report" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFID">
+      <soap12:operation soapAction="http://tempuri.org/ReadBySTAFFID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFNO">
+      <soap12:operation soapAction="http://tempuri.org/ReadBySTAFFNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByROLEID">
+      <soap12:operation soapAction="http://tempuri.org/ReadByROLEID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByDUTYID">
+      <soap12:operation soapAction="http://tempuri.org/ReadByDUTYID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByParam">
+      <soap12:operation soapAction="http://tempuri.org/ReadByParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser">
+      <soap12:operation soapAction="http://tempuri.org/ReadUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFFBYKHIDANDDUTY">
+      <soap12:operation soapAction="http://tempuri.org/ReadSTAFFBYKHIDANDDUTY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGOURPBYSTAFFID">
+      <soap12:operation soapAction="http://tempuri.org/ReadSTAFF_KHGOURPBYSTAFFID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGroupByStaffidAndDuty">
+      <soap12:operation soapAction="http://tempuri.org/ReadSTAFF_KHGroupByStaffidAndDuty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadStaff_BYDEPID">
+      <soap12:operation soapAction="http://tempuri.org/ReadStaff_BYDEPID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser_STAFF">
+      <soap12:operation soapAction="http://tempuri.org/ReadUser_STAFF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HG_STAFFHttpGet" type="tns:HG_STAFFHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFID">
+      <http:operation location="/ReadBySTAFFID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFNO">
+      <http:operation location="/ReadBySTAFFNO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByROLEID">
+      <http:operation location="/ReadByROLEID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByDUTYID">
+      <http:operation location="/ReadByDUTYID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser">
+      <http:operation location="/ReadUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFFBYKHIDANDDUTY">
+      <http:operation location="/ReadSTAFFBYKHIDANDDUTY" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGOURPBYSTAFFID">
+      <http:operation location="/ReadSTAFF_KHGOURPBYSTAFFID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGroupByStaffidAndDuty">
+      <http:operation location="/ReadSTAFF_KHGroupByStaffidAndDuty" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadStaff_BYDEPID">
+      <http:operation location="/ReadStaff_BYDEPID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HG_STAFFHttpPost" type="tns:HG_STAFFHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <http:operation location="/Delete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFID">
+      <http:operation location="/ReadBySTAFFID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadBySTAFFNO">
+      <http:operation location="/ReadBySTAFFNO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByROLEID">
+      <http:operation location="/ReadByROLEID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadByDUTYID">
+      <http:operation location="/ReadByDUTYID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadUser">
+      <http:operation location="/ReadUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFFBYKHIDANDDUTY">
+      <http:operation location="/ReadSTAFFBYKHIDANDDUTY" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGOURPBYSTAFFID">
+      <http:operation location="/ReadSTAFF_KHGOURPBYSTAFFID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSTAFF_KHGroupByStaffidAndDuty">
+      <http:operation location="/ReadSTAFF_KHGroupByStaffidAndDuty" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadStaff_BYDEPID">
+      <http:operation location="/ReadStaff_BYDEPID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HG_STAFF">
+    <wsdl:port name="HG_STAFFSoap" binding="tns:HG_STAFFSoap">
+      <soap:address location="http://192.168.0.135/API/CRM/HG_STAFF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HG_STAFFSoap12" binding="tns:HG_STAFFSoap12">
+      <soap12:address location="http://192.168.0.135/API/CRM/HG_STAFF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HG_STAFFHttpGet" binding="tns:HG_STAFFHttpGet">
+      <http:address location="http://192.168.0.135/API/CRM/HG_STAFF.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HG_STAFFHttpPost" binding="tns:HG_STAFFHttpPost">
+      <http:address location="http://192.168.0.135/API/CRM/HG_STAFF.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

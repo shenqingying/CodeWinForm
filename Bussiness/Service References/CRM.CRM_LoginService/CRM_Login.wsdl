@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OPENID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WXDLCS" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="WX" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="tns:CRM_LoginInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CRM_LoginInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TokenInfo" type="tns:TokenInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="JURISDICTION_GROUP" type="tns:ArrayOfCRM_JURISDICTION_GROUP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TokenInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="access_token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expires_in" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MESSAGE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TOKENID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCRM_JURISDICTION_GROUP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRM_JURISDICTION_GROUP" nillable="true" type="tns:CRM_JURISDICTION_GROUP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRM_JURISDICTION_GROUP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CRM_HG_RIGHTGROUP" type="tns:CRM_HG_RIGHTGROUP" />
+          <s:element minOccurs="0" maxOccurs="1" name="CRM_HG_RIGHTList" type="tns:ArrayOfCRM_HG_RIGHT" />
+          <s:element minOccurs="1" maxOccurs="1" name="STAFFID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRM_HG_RIGHTGROUP">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RGROUPID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RGROUPNAME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PRGROUPID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PRIGHTNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RGROUPMEMO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ISACTIVE" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMAGELJ" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCRM_HG_RIGHT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CRM_HG_RIGHT" nillable="true" type="tns:CRM_HG_RIGHT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CRM_HG_RIGHT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="WX" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PC" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RIGHTID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RGROUPID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RIGHTNAME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RIGHTNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RIGHTADD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RIGHTMEMO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ISACTIVE" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMAGELJ" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WX_SYS_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="tns:CRM_WX_SYS" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CRM_WX_SYS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="WX_SYSID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WXAPPID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ACCESS_TOKEN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TICKET" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JLTIME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EXPIRES_IN" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WX_SYS_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WX_SYS_UpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WX_SYS_ReadByWXAPPID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WXAPPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WX_SYS_ReadByWXAPPIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WX_SYS_ReadByWXAPPIDResult" type="tns:CRM_WX_SYS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateTokenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login_SSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OPENID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WXDLCS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login_SSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login_SSOResult" type="tns:TokenInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login_SSO_TOKEN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TOKENID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="WX" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login_SSO_TOKENResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login_SSO_TOKENResult" type="tns:CRM_LoginInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="CRM_LoginInfo" nillable="true" type="tns:CRM_LoginInfo" />
+      <s:element name="CRM_WX_SYS" nillable="true" type="tns:CRM_WX_SYS" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="TokenInfo" nillable="true" type="tns:TokenInfo" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="WX_SYS_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:WX_SYS_Update" />
+  </wsdl:message>
+  <wsdl:message name="WX_SYS_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:WX_SYS_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="WX_SYS_ReadByWXAPPIDSoapIn">
+    <wsdl:part name="parameters" element="tns:WX_SYS_ReadByWXAPPID" />
+  </wsdl:message>
+  <wsdl:message name="WX_SYS_ReadByWXAPPIDSoapOut">
+    <wsdl:part name="parameters" element="tns:WX_SYS_ReadByWXAPPIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateToken" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSOSoapIn">
+    <wsdl:part name="parameters" element="tns:Login_SSO" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSOSoapOut">
+    <wsdl:part name="parameters" element="tns:Login_SSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSO_TOKENSoapIn">
+    <wsdl:part name="parameters" element="tns:Login_SSO_TOKEN" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSO_TOKENSoapOut">
+    <wsdl:part name="parameters" element="tns:Login_SSO_TOKENResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="OPENID" type="s:string" />
+    <wsdl:part name="WXDLCS" type="s:string" />
+    <wsdl:part name="PC" type="s:string" />
+    <wsdl:part name="WX" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:CRM_LoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="WX_SYS_ReadByWXAPPIDHttpGetIn">
+    <wsdl:part name="WXAPPID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WX_SYS_ReadByWXAPPIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:CRM_WX_SYS" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenHttpGetIn">
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSOHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="OPENID" type="s:string" />
+    <wsdl:part name="WXDLCS" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSOHttpGetOut">
+    <wsdl:part name="Body" element="tns:TokenInfo" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSO_TOKENHttpGetIn">
+    <wsdl:part name="TOKENID" type="s:string" />
+    <wsdl:part name="PC" type="s:string" />
+    <wsdl:part name="WX" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSO_TOKENHttpGetOut">
+    <wsdl:part name="Body" element="tns:CRM_LoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="OPENID" type="s:string" />
+    <wsdl:part name="WXDLCS" type="s:string" />
+    <wsdl:part name="PC" type="s:string" />
+    <wsdl:part name="WX" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:CRM_LoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="WX_SYS_ReadByWXAPPIDHttpPostIn">
+    <wsdl:part name="WXAPPID" type="s:string" />
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WX_SYS_ReadByWXAPPIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:CRM_WX_SYS" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenHttpPostIn">
+    <wsdl:part name="ptoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSOHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="OPENID" type="s:string" />
+    <wsdl:part name="WXDLCS" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSOHttpPostOut">
+    <wsdl:part name="Body" element="tns:TokenInfo" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSO_TOKENHttpPostIn">
+    <wsdl:part name="TOKENID" type="s:string" />
+    <wsdl:part name="PC" type="s:string" />
+    <wsdl:part name="WX" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Login_SSO_TOKENHttpPostOut">
+    <wsdl:part name="Body" element="tns:CRM_LoginInfo" />
+  </wsdl:message>
+  <wsdl:portType name="CRM_LoginSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_Update">
+      <wsdl:input message="tns:WX_SYS_UpdateSoapIn" />
+      <wsdl:output message="tns:WX_SYS_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_ReadByWXAPPID">
+      <wsdl:input message="tns:WX_SYS_ReadByWXAPPIDSoapIn" />
+      <wsdl:output message="tns:WX_SYS_ReadByWXAPPIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <wsdl:input message="tns:ValidateTokenSoapIn" />
+      <wsdl:output message="tns:ValidateTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO">
+      <wsdl:input message="tns:Login_SSOSoapIn" />
+      <wsdl:output message="tns:Login_SSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO_TOKEN">
+      <wsdl:input message="tns:Login_SSO_TOKENSoapIn" />
+      <wsdl:output message="tns:Login_SSO_TOKENSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CRM_LoginHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpGetIn" />
+      <wsdl:output message="tns:LoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_ReadByWXAPPID">
+      <wsdl:input message="tns:WX_SYS_ReadByWXAPPIDHttpGetIn" />
+      <wsdl:output message="tns:WX_SYS_ReadByWXAPPIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <wsdl:input message="tns:ValidateTokenHttpGetIn" />
+      <wsdl:output message="tns:ValidateTokenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO">
+      <wsdl:input message="tns:Login_SSOHttpGetIn" />
+      <wsdl:output message="tns:Login_SSOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO_TOKEN">
+      <wsdl:input message="tns:Login_SSO_TOKENHttpGetIn" />
+      <wsdl:output message="tns:Login_SSO_TOKENHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CRM_LoginHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpPostIn" />
+      <wsdl:output message="tns:LoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_ReadByWXAPPID">
+      <wsdl:input message="tns:WX_SYS_ReadByWXAPPIDHttpPostIn" />
+      <wsdl:output message="tns:WX_SYS_ReadByWXAPPIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <wsdl:input message="tns:ValidateTokenHttpPostIn" />
+      <wsdl:output message="tns:ValidateTokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO">
+      <wsdl:input message="tns:Login_SSOHttpPostIn" />
+      <wsdl:output message="tns:Login_SSOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO_TOKEN">
+      <wsdl:input message="tns:Login_SSO_TOKENHttpPostIn" />
+      <wsdl:output message="tns:Login_SSO_TOKENHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CRM_LoginSoap" type="tns:CRM_LoginSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_Update">
+      <soap:operation soapAction="http://tempuri.org/WX_SYS_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_ReadByWXAPPID">
+      <soap:operation soapAction="http://tempuri.org/WX_SYS_ReadByWXAPPID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <soap:operation soapAction="http://tempuri.org/ValidateToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO">
+      <soap:operation soapAction="http://tempuri.org/Login_SSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO_TOKEN">
+      <soap:operation soapAction="http://tempuri.org/Login_SSO_TOKEN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CRM_LoginSoap12" type="tns:CRM_LoginSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_Update">
+      <soap12:operation soapAction="http://tempuri.org/WX_SYS_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_ReadByWXAPPID">
+      <soap12:operation soapAction="http://tempuri.org/WX_SYS_ReadByWXAPPID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <soap12:operation soapAction="http://tempuri.org/ValidateToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO">
+      <soap12:operation soapAction="http://tempuri.org/Login_SSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO_TOKEN">
+      <soap12:operation soapAction="http://tempuri.org/Login_SSO_TOKEN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CRM_LoginHttpGet" type="tns:CRM_LoginHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_ReadByWXAPPID">
+      <http:operation location="/WX_SYS_ReadByWXAPPID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <http:operation location="/ValidateToken" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO">
+      <http:operation location="/Login_SSO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO_TOKEN">
+      <http:operation location="/Login_SSO_TOKEN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CRM_LoginHttpPost" type="tns:CRM_LoginHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WX_SYS_ReadByWXAPPID">
+      <http:operation location="/WX_SYS_ReadByWXAPPID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateToken">
+      <http:operation location="/ValidateToken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO">
+      <http:operation location="/Login_SSO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_SSO_TOKEN">
+      <http:operation location="/Login_SSO_TOKEN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CRM_Login">
+    <wsdl:port name="CRM_LoginSoap" binding="tns:CRM_LoginSoap">
+      <soap:address location="http://192.168.0.16/API/CRM/CRM_Login.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CRM_LoginSoap12" binding="tns:CRM_LoginSoap12">
+      <soap12:address location="http://192.168.0.16/API/CRM/CRM_Login.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CRM_LoginHttpGet" binding="tns:CRM_LoginHttpGet">
+      <http:address location="http://192.168.0.16/API/CRM/CRM_Login.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CRM_LoginHttpPost" binding="tns:CRM_LoginHttpPost">
+      <http:address location="http://192.168.0.16/API/CRM/CRM_Login.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

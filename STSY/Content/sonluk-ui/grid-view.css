@@ -1,0 +1,55 @@
+﻿
+.sonluk-grid-view {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+.GridViewStyle a {
+    color: #fff;
+}
+
+.sonluk-grid-view-header th {
+    border: 1px solid #d4d4d4;
+    padding-left: 2px;
+    padding-right: 2px;
+    background-color: #f1f1f1;
+}
+
+.sonluk-grid-view-header {
+    font-weight: bold;
+}
+
+.sonluk-grid-view-row {
+    background-color: White;
+}
+
+.sonluk-grid-view-alternating-row {
+}
+
+    .sonluk-grid-view-row td, .sonluk-grid-view-alternating-row td {
+        border: 1px solid #d4d4d4;
+        padding-left: 2px;
+        padding-right: 2px;
+        font-size: 13px;
+    }
+
+.sonluk-grid-view-footer {
+    background-color: #5D7B9D;
+    font-weight: bold;
+    color: White;
+}
+
+.sonluk-grid-view-selected-row {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.sonluk-grid-view-pager {
+    background-color: #284775;
+    color: #FFFFFF;
+}
+
+    .sonluk-grid-view-pager table {
+        margin: 0 auto 0 auto;
+    }

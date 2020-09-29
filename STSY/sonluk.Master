@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sonluk.Master.cs" Inherits="UIX.WebForm.SonlukLayout" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="~/Content/sonluk-ui/common.css" rel="stylesheet" />
+    <link href="~/Content/sonluk-ui/color.css" rel="stylesheet" />
+    <link href="~/Content/sonluk-ui/layout.css" rel="stylesheet" />
+    <link href="~/Content/sonluk-ui/nav-bar.css" rel="stylesheet" />
+    <link href="~/Content/sonluk-ui/control.css" rel="stylesheet" />
+    <script src="../Scripts/WdatePicker.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form" runat="server">
+        <div class="header color-header">
+            <div class="header-logo">
+                <img class="header-logo-img" src="<%: ResolveUrl("~/Content/sonluk-ui/images/logo.png") %>"
+                    alt="" />
+                <div style="text-align: right;margin-right: 20px;">
+                    <a href="../login.aspx?LOGINTYPE=1" style="font-size: 24px;color:white;">退出</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bar color-nav-bar">
+            <input type="hidden" value="<%: ResolveUrl("~/Content/sonluk-ui/images/blank.gif") %>"
+                id="blankImageUrl" />
+            <input type="hidden" value='{"ID":31,"Node":"食堂管理系统",
+                "Children":[{"ID":32,"Node":"主页",
+                    "Children":[{"ID":0,"Node":"主页","Uri":"../Index/Index.aspx"},
+                    {"ID":0,"Node":"人数统计","Uri":"../Index/RSTJ.aspx"},
+                    {"ID":0,"Node":"修改密码","Uri":"../Index/ChangePSW.aspx"}]},
+                {"ID":33,"Node":"物料管理",
+                    "Children":[{"ID":0,"Node":"物料信息","Uri":"../WL/WLXX.aspx"},
+                    {"ID":0,"Node":"物料库存","Uri":"../WL/WLKC.aspx"},
+                    {"ID":0,"Node":"库存预警","Uri":"../WL/KCYJ.aspx"}]},
+                {"ID":33,"Node":"入库管理",
+                    "Children":[{"ID":0,"Node":"入库登记","Uri":"../RKGL/RKDJ.aspx"},
+                    {"ID":0,"Node":"入库审核","Uri":"../RKGL/RKSH.aspx"},
+                    {"ID":0,"Node":"入库审核退回","Uri":"../RKGL/RKSHTH.aspx"},
+                    {"ID":0,"Node":"入库单合计查询","Uri":"../RKGL/HJCX.aspx"},
+                    {"ID":0,"Node":"入库查询","Uri":"../RKGL/RKCX.aspx"},
+                    {"ID":0,"Node":"入库清单","Uri":"../RKGL/RKlist.aspx"},
+                    {"ID":0,"Node":"价格查询","Uri":"../RKGL/JGCX.aspx"}]},
+                {"ID":34,"Node":"应付管理",
+                    "Children":[{"ID":0,"Node":"发票录入","Uri":"../YFGL/FPRR.aspx"},
+                    {"ID":0,"Node":"发票审核","Uri":"../YFGL/FPSH.aspx"},
+                    {"ID":0,"Node":"付款确认","Uri":"../YFGL/FKQR.aspx"},
+                    {"ID":0,"Node":"付款回单确认","Uri":"../YFGL/FKHDQR.aspx"},
+                    {"ID":0,"Node":"应付查询","Uri":"../YFGL/YFCX.aspx"},
+                    {"ID":0,"Node":"发票入库报表","Uri":"../YFGL/FPRKTJBB.aspx"}]},
+                {"ID":33,"Node":"出库管理",
+                    "Children":[{"ID":0,"Node":"物料出库","Uri":"../CHUKGL/WLCK.aspx"},
+                    {"ID":0,"Node":"出库审核","Uri":"../CHUKGL/CKSH.aspx"},
+                    {"ID":0,"Node":"出库审核退回","Uri":"../CHUKGL/CKSHTH.aspx"},
+                    {"ID":0,"Node":"出库查询","Uri":"../CHUKGL/CKCX.aspx"}]},
+                {"ID":33,"Node":"仓库日报管理",
+                    "Children":[{"ID":0,"Node":"日报登记","Uri":"../CKRBGL/RBDJ.aspx"},
+                    {"ID":0,"Node":"耗用日报表","Uri":"../CKRBGL/HYRBB.aspx"},
+                    {"ID":0,"Node":"入库日报表","Uri":"../CKRBGL/RKRBB.aspx"},
+                    {"ID":0,"Node":"出入日报表","Uri":"../CKRBGL/CKRBB.aspx"},
+                    {"ID":0,"Node":"入库对比报表","Uri":"../CKRBGL/RKDBB.aspx"}]},
+                {"ID":33,"Node":"仓库管理",
+                    "Children":[{"ID":0,"Node":"仓库信息","Uri":"../CKGL/CKXX.aspx"},
+                    {"ID":0,"Node":"客户供应商","Uri":"../CKGL/KHGYS.aspx"}]},
+                {"ID":33,"Node":"接待管理",
+                    "Children":[{"ID":0,"Node":"接待登记","Uri":"../JDGL/JDDJ.aspx"},
+                    {"ID":0,"Node":"接待确认","Uri":"../JDGL/JDRQ.aspx"},
+                    {"ID":0,"Node":"接待查询","Uri":"../JDGL/JDCX.aspx"},
+                    {"ID":0,"Node":"接待设置","Uri":"../JDGL/JDSZ.aspx"},
+                    {"ID":0,"Node":"接待参数","Uri":"../JDGL/JDRYGL.aspx"}]},
+                {"ID":33,"Node":"访客系统",
+                    "Children":[{"ID":0,"Node":"访客查询","Uri":"../FKSY/SelectFKINFO.aspx"}]}]}'
+                id="nav-bar-node" />
+            <div class="nav-bar-menu">
+            </div>
+        </div>
+        <div class="page">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </div>
+    </form>
+    <script src="<%: ResolveUrl("~/Scripts/jquery-1.8.2.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/sonluk-ui/layout.js") %>"></script>
+    <script src="<%: ResolveUrl("~/Scripts/sonluk-ui/nav-bar.js") %>"></script>
+    <asp:ContentPlaceHolder runat="server" ID="Script" />
+    <p>
+        &nbsp;
+    </p>
+</body>
+</html>

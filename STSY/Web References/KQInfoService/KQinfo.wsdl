@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://Sonluk.com/API/KQ/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://Sonluk.com/API/KQ/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://Sonluk.com/API/KQ/">
+      <s:element name="getKQINFO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKQINFOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKQINFOResult" type="tns:KQINFO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="KQINFO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Count1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Count2" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="StaffCardID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StaffCardIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StaffCardIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KQINFO" nillable="true" type="tns:KQINFO" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getKQINFOSoapIn">
+    <wsdl:part name="parameters" element="tns:getKQINFO" />
+  </wsdl:message>
+  <wsdl:message name="getKQINFOSoapOut">
+    <wsdl:part name="parameters" element="tns:getKQINFOResponse" />
+  </wsdl:message>
+  <wsdl:message name="StaffCardIDSoapIn">
+    <wsdl:part name="parameters" element="tns:StaffCardID" />
+  </wsdl:message>
+  <wsdl:message name="StaffCardIDSoapOut">
+    <wsdl:part name="parameters" element="tns:StaffCardIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getKQINFOHttpGetIn">
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getKQINFOHttpGetOut">
+    <wsdl:part name="Body" element="tns:KQINFO" />
+  </wsdl:message>
+  <wsdl:message name="StaffCardIDHttpGetIn">
+    <wsdl:part name="cardno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StaffCardIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getKQINFOHttpPostIn">
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getKQINFOHttpPostOut">
+    <wsdl:part name="Body" element="tns:KQINFO" />
+  </wsdl:message>
+  <wsdl:message name="StaffCardIDHttpPostIn">
+    <wsdl:part name="cardno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StaffCardIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="KQinfoSoap">
+    <wsdl:operation name="getKQINFO">
+      <wsdl:input message="tns:getKQINFOSoapIn" />
+      <wsdl:output message="tns:getKQINFOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StaffCardID">
+      <wsdl:input message="tns:StaffCardIDSoapIn" />
+      <wsdl:output message="tns:StaffCardIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="KQinfoHttpGet">
+    <wsdl:operation name="getKQINFO">
+      <wsdl:input message="tns:getKQINFOHttpGetIn" />
+      <wsdl:output message="tns:getKQINFOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StaffCardID">
+      <wsdl:input message="tns:StaffCardIDHttpGetIn" />
+      <wsdl:output message="tns:StaffCardIDHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="KQinfoHttpPost">
+    <wsdl:operation name="getKQINFO">
+      <wsdl:input message="tns:getKQINFOHttpPostIn" />
+      <wsdl:output message="tns:getKQINFOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StaffCardID">
+      <wsdl:input message="tns:StaffCardIDHttpPostIn" />
+      <wsdl:output message="tns:StaffCardIDHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KQinfoSoap" type="tns:KQinfoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getKQINFO">
+      <soap:operation soapAction="http://Sonluk.com/API/KQ/getKQINFO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StaffCardID">
+      <soap:operation soapAction="http://Sonluk.com/API/KQ/StaffCardID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="KQinfoSoap12" type="tns:KQinfoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getKQINFO">
+      <soap12:operation soapAction="http://Sonluk.com/API/KQ/getKQINFO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StaffCardID">
+      <soap12:operation soapAction="http://Sonluk.com/API/KQ/StaffCardID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="KQinfoHttpGet" type="tns:KQinfoHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="getKQINFO">
+      <http:operation location="/getKQINFO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StaffCardID">
+      <http:operation location="/StaffCardID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="KQinfoHttpPost" type="tns:KQinfoHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getKQINFO">
+      <http:operation location="/getKQINFO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StaffCardID">
+      <http:operation location="/StaffCardID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KQinfo">
+    <wsdl:port name="KQinfoSoap" binding="tns:KQinfoSoap">
+      <soap:address location="http://192.168.8.207/API/KQ/KQinfo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="KQinfoSoap12" binding="tns:KQinfoSoap12">
+      <soap12:address location="http://192.168.8.207/API/KQ/KQinfo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="KQinfoHttpGet" binding="tns:KQinfoHttpGet">
+      <http:address location="http://192.168.8.207/API/KQ/KQinfo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="KQinfoHttpPost" binding="tns:KQinfoHttpPost">
+      <http:address location="http://192.168.8.207/API/KQ/KQinfo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,61 @@
+﻿.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 50px;
+}
+.header-logo {
+    margin-top:5px;
+    margin-left:30px;
+    height:40px;
+    
+}
+.header-logo-img {
+    height:40px;
+    margin-left:0;
+    float:left;
+}
+.main {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #0094ff;
+}
+
+.nav-bar {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    width: 205px;
+}
+
+.page {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 205px;  
+    overflow:auto;  
+}
+
+
+.page-header {
+    height:20px;
+    width:95%;
+    margin:auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    border-bottom:1px solid #3498db;
+           
+}
+.page-header-nav {
+        height:100px;
+    width:100%;
+    line-height:20px;
+    font-size:14px;
+    text-align:left;
+}
